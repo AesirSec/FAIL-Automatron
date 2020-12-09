@@ -16,7 +16,7 @@
 
 import threading
 import time
-from gui import Ui_FAIL
+from .gui import Ui_FAIL
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import qdarkstyle
 import ctypes
@@ -103,7 +103,7 @@ class mainWindow(QMainWindow):
         
             
             try:
-                driver.get( ### URL Not included for security reasons ###)
+                driver.get('https://www.google.com')
            
                 # Input the username and password because opening up Splunk this way forces you to enter credentials
                 driver.find_element_by_id('username').send_keys(username)
@@ -164,15 +164,14 @@ class mainWindow(QMainWindow):
                 print('No Events')
                 self.ui.label_5.setText('Sleeping')
                 driver.quit()
-                self.sleeptimer()
-             
-                
-        #print(threading.active_count())
+                self.sleeptimer()   
+
+        # print(threading.active_count())
         if self.switchbot is False:
-            runninglabel2 = self.ui.label_5
-            runninglabel2.setText('Not Running')
-            runninglabel2.setStyleSheet('color: white')
-            driver.quit()
+                runninglabel2 = self.ui.label_5
+                runninglabel2.setText('Not Running')
+                runninglabel2.setStyleSheet('color: white')
+               
 
     def sleeptimer(self):
 
