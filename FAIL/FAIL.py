@@ -16,7 +16,7 @@
 
 import threading
 import time
-from .gui import Ui_FAIL
+from gui import Ui_FAIL
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import qdarkstyle
 import ctypes
