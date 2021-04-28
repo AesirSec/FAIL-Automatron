@@ -103,7 +103,7 @@ class mainWindow(QMainWindow):
         
             
             try:
-                driver.get('https://www.google.com')
+                driver.get('//Your Splunk ES instance')
            
                 # Input the username and password because opening up Splunk this way forces you to enter credentials
                 driver.find_element_by_id('username').send_keys(username)
